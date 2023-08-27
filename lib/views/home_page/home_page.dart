@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:developer';
 
 import 'package:currency_converter/widgets/loadng_flutter_progress.dart';
 import 'package:flutter/material.dart';
@@ -112,7 +114,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Image.network(
@@ -137,16 +138,16 @@ class _HomePageState extends State<HomePage> {
           switch (snapShot.connectionState) {
             case ConnectionState.waiting:
             case ConnectionState.none:
-              return Container(
-                alignment: Alignment.center,
-                child: LoadingProgress(
-                  onEnd: () {
-                    setState(() {
-                      startHomePage = true;
-                    });
-                  },
-                ),
-              );
+              return startHomePage
+                  ? const Center( 
+                      child: Text('Sucesso'),
+                    )
+                  : Container(
+                      alignment: Alignment.center,
+                      child: const Text(
+                        'Carregando informações...',
+                      ),
+                    );
 
             default:
               if (snapShot.hasError) {
@@ -172,6 +173,18 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 );
+              } else if (!startHomePage) {
+                return Center(
+                  child: LoadingProgress(
+                    onEnd: () {
+                      setState(
+                        () {
+                          startHomePage = true;
+                        },
+                      );
+                    },
+                  ),
+                );
               } else {
                 real = double.parse(snapShot.data!['data']['BRL'].toString());
                 dolar = double.parse(snapShot.data!['data']['USD'].toString());
@@ -180,6 +193,7 @@ class _HomePageState extends State<HomePage> {
                 canadian =
                     double.parse(snapShot.data!['data']['CAD'].toString());
                 yen = double.parse(snapShot.data!['data']['JPY'].toString());
+
                 return Container(
                   margin: const EdgeInsets.all(20),
                   child: SingleChildScrollView(
