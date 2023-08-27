@@ -270,14 +270,14 @@ class _HomePageState extends State<HomePage> {
                                 1) {
                               final correctedValue =
                                   newValue.substring(0, newValue.length - 1);
-                              usdController.value = TextEditingValue(
+                              eurController.value = TextEditingValue(
                                 text: correctedValue,
                                 selection: TextSelection.collapsed(
                                   offset: correctedValue.length,
                                 ),
                               );
                             } else {
-                              usdController.value = TextEditingValue(
+                              eurController.value = TextEditingValue(
                                 text: newValue,
                                 selection: TextSelection.collapsed(
                                   offset: value.length,
@@ -301,14 +301,14 @@ class _HomePageState extends State<HomePage> {
                                 1) {
                               final correctedValue =
                                   newValue.substring(0, newValue.length - 1);
-                              usdController.value = TextEditingValue(
+                              gbpController.value = TextEditingValue(
                                 text: correctedValue,
                                 selection: TextSelection.collapsed(
                                   offset: correctedValue.length,
                                 ),
                               );
                             } else {
-                              usdController.value = TextEditingValue(
+                              gbpController.value = TextEditingValue(
                                 text: newValue,
                                 selection: TextSelection.collapsed(
                                   offset: value.length,
@@ -332,14 +332,14 @@ class _HomePageState extends State<HomePage> {
                                 1) {
                               final correctedValue =
                                   newValue.substring(0, newValue.length - 1);
-                              usdController.value = TextEditingValue(
+                              cadController.value = TextEditingValue(
                                 text: correctedValue,
                                 selection: TextSelection.collapsed(
                                   offset: correctedValue.length,
                                 ),
                               );
                             } else {
-                              usdController.value = TextEditingValue(
+                              cadController.value = TextEditingValue(
                                 text: newValue,
                                 selection: TextSelection.collapsed(
                                   offset: value.length,
@@ -363,14 +363,14 @@ class _HomePageState extends State<HomePage> {
                                 1) {
                               final correctedValue =
                                   newValue.substring(0, newValue.length - 1);
-                              usdController.value = TextEditingValue(
+                              jpyController.value = TextEditingValue(
                                 text: correctedValue,
                                 selection: TextSelection.collapsed(
                                   offset: correctedValue.length,
                                 ),
                               );
                             } else {
-                              usdController.value = TextEditingValue(
+                              jpyController.value = TextEditingValue(
                                 text: newValue,
                                 selection: TextSelection.collapsed(
                                   offset: value.length,
