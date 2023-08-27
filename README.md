@@ -1,6 +1,5 @@
 # currency_converter
-
-A new Flutter project.
+Currency conversion app. The exchange rate is obtained through the freecurrencyAPI's API.
 
 ## Getting Started
 
