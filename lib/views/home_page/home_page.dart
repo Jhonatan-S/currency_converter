@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:currency_converter/widgets/loadng_flutter_progress.dart';
 import 'package:flutter/material.dart';
@@ -139,13 +138,12 @@ class _HomePageState extends State<HomePage> {
             case ConnectionState.waiting:
             case ConnectionState.none:
               return startHomePage
-                  ? const Center( 
-                      child: Text('Sucesso'),
+                  ? const Center(
+                      child: Text('Success'),
                     )
-                  : Container(
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'Carregando informações...',
+                  : const Center(
+                      child: Text(
+                        'loading data...',
                       ),
                     );
 
@@ -157,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       alignment: Alignment.center,
                       child: const Text(
-                        'Erro ao carregar as informações.\nTente novamente',
+                        'Error loading information.\nTry again',
                         textAlign: TextAlign.center,
                       ),
                     ),
